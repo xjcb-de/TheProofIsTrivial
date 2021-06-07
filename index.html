@@ -15,64 +15,64 @@
  */
 
 var intros = [
-    "Es besteht Bijektivität zu einem",
+    "Bilde bijektiv ab auf ein",
     "Betrachte das Problem als ein",
 ];
 
-var adjectives = [
-    "abelsch",
-    "assoziativ",
-    "berechenbar",
-    "Lebesgue-messbar",
-    "semi-entscheidbar",
-    "einfach",
-    "kombinatorisch",
-    "strukturerhaltend",
-    "diagonalisierbar",
-    "nicht singulär",
-    "orientierbar",
-    "zweifach differenzierbar",
-    "dreifach differenzierbar",
-    "abzählbar",
-    "prim",
-    "vollständig",
-    "kontinuierlich",
-    "trivial",
-    "3-zusammenhängend",
-    "bipartit",
-    "planar",
-    "endlich",
-    "nichtdeterministisch",
-    "alternierend",
-    "konvex",
-    "unentscheidbar",
-    "zweiflächig",
-    "kontextfrei",
-    "rational",
-    "regulär",
-    "Noethersch",
-    "Cauchy",
-    "offen",
-    "geschlossen",
-    "kompakt",
-    "abgeschlossen-offen",
-    "punktlos",
-    "perfekt",
-    "non-degeneriert",
-    "degeneriert",
-    "schiefsymmetrisch",
-    "sesquilinear",
-    "fundamental",
-    "stetig",
-    "verbunden",
-    "simplistisch",
-    "universell",
-    "Greedy",
-    "normal",
-    "total",
-    "linksinvertierbar",
-    "exakt",
-    "leer",
+var adjectives = [//if more than one element: masculine, feminine, neutrum form.
+    ["abelsch"],
+    ["assoziativ"],
+    ["berechenbar"],
+    ["Lebesgue-messbar"],
+    ["semi-entscheidbar"],
+    ["einfach"],
+    ["kombinatorisch"],
+    ["strukturerhaltend"],
+    ["diagonalisierbar"],
+    ["nicht singulär"],
+    ["orientierbar"],
+    ["zweifach differenzierbar"],
+    ["dreifach differenzierbar"],
+    ["abzählbar"],
+    ["prim"],
+    ["vollständig"],
+    ["kontinuierlich"],
+    ["trivial"],
+    ["3-zusammenhängend"],
+    ["bipartit"],
+    ["planar"],
+    ["endlich"],
+    ["nichtdeterministisch"],
+    ["alternierend"],
+    ["konvex"],
+    ["unentscheidbar"],
+    ["zweiflächig"],
+    ["kontextfrei"],
+    ["rational"],
+    ["regulär"],
+    ["Noethersch"],
+    ["Cauchy", "Cauchy", "Cauchy"],
+    ["offen"],
+    ["geschlossen"],
+    ["kompakt"],
+    ["abgeschlossen-offen"],
+    ["punktlos"],
+    ["perfekt"],
+    ["nicht-degeneriert"],
+    ["degeneriert"],
+    ["schiefsymmetrisch"],
+    ["sesquilinear"],
+    ["fundamental"],
+    ["stetig"],
+    ["verbunden"],
+    ["simplistisch"],
+    ["universell"],
+    ["Greedy", "Greedy", "Greedy"],
+    ["normal"],
+    ["total"],
+    ["linksinvertierbar"],
+    ["exakt"],
+    ["leer"],
 ];
 
 /*
@@ -81,32 +81,32 @@ var adjectives = [
  * algorithm in the plural() method.
  */
 var setNouns = [
-    ["Multimenge"],
-    ["Metrischer Raum","Metrische Räume"],
-    ["Gruppe"],
-    ["Monoid", "Monoide"],
-    ["Halbgruppe"],
-    ["Rang", "Ränge"],
-    ["Feld", "Felder"],
-    ["Modul", "Module"],
-    ["topologischer Raum", "topologische Räume"],
-    ["Hilbert Raum", "Hilbert Räume"],
-    ["Mannigfaltigkeit"],
-    ["Hypergraph"],
-    ["DAG", "DAGs"],
-    ["Restklasse"],
-    ["Logistisches System", "Logistische Systeme"],
-    ["Komplexitätsklasse"],
-    ["Sprache"],
-    ["Halbordnung"],
-    ["Algebra", "Algebren"],
-    ["Lie-Algebra", "Lie-Algebren"],
-    ["Dynkin-System", "Dynkin-Systeme"],
-    ["Sigma-Algebra", "Sigma-Algebren"],
-    ["Ultrafilter", "Ultrafilter"],
-    ["Cayleygraph"],
-    ["Varietät"],
-    ["Bahn"],
+    [1, "Multimenge"],
+    [0, "Metrischer Raum","Metrische Räume"],
+    [1, "Gruppe"],
+    [0, "Monoid", "Monoide"],
+    [1, "Halbgruppe"],
+    [0, "Rang", "Ränge"],
+    [2, "Feld", "Felder"],
+    [2, "Modul", "Module"],
+    [0, "topologischer Raum", "topologische Räume"],
+    [0, "Hilbert Raum", "Hilbert Räume"],
+    [1, "Mannigfaltigkeit"],
+    [0, "Hypergraph"],
+    [0, "DAG", "DAGs"],
+    [1, "Restklasse"],
+    [2, "Logistisches System", "Logistische Systeme"],
+    [1, "Komplexitätsklasse"],
+    [1, "Sprache"],
+    [1, "Halbordnung"],
+    [1, "Algebra", "Algebren"],
+    [1, "Lie-Algebra", "Lie-Algebren"],
+    [2, "Dynkin-System", "Dynkin-Systeme"],
+    [1, "Sigma-Algebra", "Sigma-Algebren"],
+    [0, "Ultrafilter", "Ultrafilter"],
+    [0, "Cayleygraph"],
+    [1, "Varietät"],
+    [1, "Bahn"],
 ]
 
 var allNouns = setNouns.concat([
@@ -114,30 +114,42 @@ var allNouns = setNouns.concat([
      * Mathematical objects that can't contain elements (unless you're a set
      * theorist).
      */
-    ["Ganzzahl"],
-    ["Turing Maschine"],
-    ["Automorphismus", "Automorphismen"],
-    ["Bijektion"],
-    ["Erzeugende Funktion"],
-    ["Taylor Reihe"],
-    ["Lineare Transformation"],
-    ["Kellerautomat"],
-    ["Kombinatorisches Spiel","Kombinatorische Spiele"],
-    ["Äquivalenzrelation"],
-    ["Turnierform"],
-    ["Zufallsvariable"],
-    ["Triangulation"],
-    ["unbeschränkter Schaltkreis", "unbeschränkte Schaltkreise"],
-    ["Logarithmisch platzbeschränkte Reduktion"],
-    ["Markovkette"],
-    ["4-Form"],
-    ["7-Kette"],
-    ["Operator"],
-    ["Homomorphismus","Homomorphismen"],
-    ["Farbmetrik"],
-    ["Betti-Zahl"],
-    ["Radon-Nikodym Ableitung"],
+    [1, "Ganzzahl"],
+    [1, "Turing Maschine"],
+    [0, "Automorphismus", "Automorphismen"],
+    [1, "Bijektion"],
+    [1, "Erzeugende Funktion"],
+    [1, "Taylor Reihe"],
+    [1, "Lineare Transformation"],
+    [0, "Kellerautomat"],
+    [2, "Kombinatorisches Spiel","Kombinatorische Spiele"],
+    [1, "Äquivalenzrelation"],
+    [1, "Turnierform"],
+    [1, "Zufallsvariable"],
+    [1, "Triangulation"],
+    [0, "unbeschränkter Schaltkreis", "unbeschränkte Schaltkreise"],
+    [1, "Logarithmisch platzbeschränkte Reduktion"],
+    [1, "Markovkette"],
+    [1, "4-Form"],
+    [1, "7-Kette"],
+    [0, "Operator"],
+    [0, "Homomorphismus","Homomorphismen"],
+    [1, "Farbmetrik"],
+    [1, "Betti-Zahl"],
+    [1, "Radon-Nikodym Ableitung"],
 ])
+
+function randomAdjective(gender) {
+    var adjective = randomFromList(adjectives);
+    if (adjective.length > 1) {
+        return adjective[gender]
+    } else {
+        var suffix = "e";
+        if (gender == 0) suffix = "er";
+        if (gender == 2) suffix = "es";
+        return adjective[0] + suffix;
+    }
+}
 
 function randomFromList(list) {
     return list[Math.floor(Math.random() * list.length)];
@@ -150,10 +162,10 @@ function writeLine(fontSize, text) {
 }
 
 function plural(nounWithOverride) {
-    if (nounWithOverride.length === 2) {
-        return nounWithOverride[1];
+    if (nounWithOverride.length === 3) {
+        return nounWithOverride[2];
     } else {
-        var text = nounWithOverride[0];
+        var text = nounWithOverride[1];
         if (text[text.length - 1] === "e") {
             return text + "n";
         } else {
@@ -162,14 +174,15 @@ function plural(nounWithOverride) {
     }
 }
 
-var firstAdjective = randomFromList(adjectives)
-var introSuffix = "aeiou".indexOf(firstAdjective[0]) === -1 ? "" : "n";
+var firstNoun = randomFromList(setNouns);
+var firstAdjective = randomAdjective(firstNoun[0]);
+var introSuffix = firstNoun[0] == 1 ? "e" : "";
 
 writeLine(40, "Der Beweis ist trivial! " + randomFromList(intros) + introSuffix);
 writeLine(70, firstAdjective);
-writeLine(70, randomFromList(setNouns)[0]);
-writeLine(40, "dessen Elemente");
-writeLine(70, randomFromList(adjectives));
+writeLine(70, firstNoun[1]);
+writeLine(40, firstNoun[0] == 1 ? "deren Elemente" : "dessen Elemente");
+writeLine(70, randomAdjective(1)); //plural form is same as female form
 writeLine(70, plural(randomFromList(allNouns)));
 writeLine(40, "sind");
 
