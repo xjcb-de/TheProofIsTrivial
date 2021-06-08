@@ -82,14 +82,14 @@ var adjectives = [//if more than one element: masculine, feminine, neutrum form.
  */
 var setNouns = [
     [1, "Multimenge"],
-    [0, "Metrischer Raum","Metrische Räume"],
+    [0, "Metrischen Raum","Metrische Räume"],
     [1, "Gruppe"],
     [0, "Monoid", "Monoide"],
     [1, "Halbgruppe"],
     [0, "Rang", "Ränge"],
     [2, "Feld", "Felder"],
     [2, "Modul", "Module"],
-    [0, "topologischer Raum", "topologische Räume"],
+    [0, "topologischen Raum", "topologische Räume"],
     [0, "Hilbert Raum", "Hilbert Räume"],
     [1, "Mannigfaltigkeit"],
     [0, "Hypergraph"],
@@ -127,7 +127,7 @@ var allNouns = setNouns.concat([
     [1, "Turnierform"],
     [1, "Zufallsvariable"],
     [1, "Triangulation"],
-    [0, "unbeschränkter Schaltkreis", "unbeschränkte Schaltkreise"],
+    [0, "unbeschränkten Schaltkreis", "unbeschränkte Schaltkreise"],
     [1, "Logarithmisch platzbeschränkte Reduktion"],
     [1, "Markovkette"],
     [1, "4-Form"],
@@ -145,7 +145,7 @@ function randomAdjective(gender) {
         return adjective[gender]
     } else {
         var suffix = "e";
-        if (gender == 0) suffix = "er";
+        if (gender == 0) suffix = "en";
         if (gender == 2) suffix = "es";
         return adjective[0] + suffix;
     }
@@ -176,7 +176,9 @@ function plural(nounWithOverride) {
 
 var firstNoun = randomFromList(setNouns);
 var firstAdjective = randomAdjective(firstNoun[0]);
-var introSuffix = firstNoun[0] == 1 ? "e" : "";
+var introSuffix = "";
+if (firstNoun[0] == 0) introSuffix = "en";
+if (firstNoun[0] == 1) introSuffix = "e";
 
 writeLine(40, "Der Beweis ist trivial! " + randomFromList(intros) + introSuffix);
 writeLine(70, firstAdjective);
